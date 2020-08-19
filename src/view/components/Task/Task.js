@@ -4,6 +4,12 @@ import './Task.css'
 
 function Task(props) {
 
+
+      // Date formatting:
+    //   let time = your date value;
+    //   let convDate = new Date(parseInt(time));
+    //   let formatted_date = convDate.getDate() + "/" + (convDate.getMonth() + 1) + "/" + convDate.getFullYear();
+
 /*
     const { newItem, startDate, endDate} = props;
     const datev = (new Date(parseInt(newItem.diffItem.updatedTime, 10))).toLocaleDateString();
