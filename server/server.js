@@ -18,7 +18,6 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 //Schema:
-
 const Task = mongoose.model('Task', {
     jiraItem: {
         jiraId: String,
@@ -68,7 +67,7 @@ app.get('/api/getDeletedAggr', async function (request, response) {
 })
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 app.listen(port, () => { console.log("App is Listening on port", port) })
 
 

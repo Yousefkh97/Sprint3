@@ -3,6 +3,8 @@ import './Task.css'
 
 
 function Task(props) {
+
+/*
     const { newItem, startDate, endDate} = props;
     const datev = (new Date(parseInt(newItem.diffItem.updatedTime, 10))).toLocaleDateString();
     const firstDate = (new Date(startDate)).toLocaleDateString();
@@ -12,5 +14,8 @@ function Task(props) {
 
         <p>{myDate}</p>
     )
+*/
+
+return("Task - ");
 }
 export default Task;

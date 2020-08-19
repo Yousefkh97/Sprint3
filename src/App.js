@@ -19,7 +19,7 @@ function App() {
       <div className='tasks-wrapper'>
         {
           content.map((newItem, index) => {
-            return <Task key={index} newItem={newItem} startDate={startDate} endDate={endDate}/>
+            return <Task key={index} newItem={newItem} startDate={startDate} endDate={endDate} />
 
           })
         }
@@ -28,15 +28,29 @@ function App() {
   );
 
   function handleButton(e) {
-    e.preventDefault()
-    let { startDate, endDate } = e.target.elements;
-    fetch('/api/taskList')
-      .then(res => res.json())
-      .then(data => {
+
+    // e.preventDefault()
+    // let { startDate, endDate } = e.target.elements;
+    // fetch('/api/taskList')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     setConent(data);
+    //     setStartDate(startDate.value)
+    //     setEndDate(endDate.value)
+    //   })
+
+    //Get deleted Items fetch using Aggregate
+
+      e.preventDefault()
+      let { startDate, endDate } = e.target.elements;
+      fetch('/api/getDeletedAggr').then(res => res.json()).then(data => {
+
+        console.log(data);
         setConent(data);
         setStartDate(startDate.value)
         setEndDate(endDate.value)
-      })
+
+        } );
   }
 }
 
