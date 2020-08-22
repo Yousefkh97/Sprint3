@@ -333,18 +333,44 @@ const Task = mongoose.model('Task', {
 
 // API Definitions:
 
-app.get('/api/getDeletedAggr', async function (request, response) {
-
-    let tasks = await Task.aggregate(
-        [{ $match: { "diffItem.type": "Delete" } },
+app.post('/api/getDeletedAggrWithDate', async function (request, response) {
+    const { startDate, endDate } = request.body;
+    //, { "diffItem.updatedTime": { $gte: startDate, $lte: endDate } }
+    let tasks = await Task.aggregate([
+        { $match: { $and: [{ "diffItem.type": "Delete" }, { "diffItem.updatedTime": { $gte: startDate, $lte: endDate } }] } },
         {
             $group: {
                 _id: "$diffItem.updatedTime",
                 tasks: { $push: "$$ROOT" }
             }
         }
-        ])
+    ]);
+
+    // (
+    //     { $and: [{ "diffItem.type": "Delete" }, { $gt: ["$diffItem.updatedTime", startDate] }, { $lt: ["$diffItem.updatedTime", endDate] }] }
+    //     [{ $match: { "diffItem.type": "Delete" } },
+    //     {
+    //         $group: {
+    //             _id: "$diffItem.updatedTime",
+    //             tasks: { $push: "$$ROOT" }
+    //         }
+    //     }
+    //     ])
     response.send(tasks)
+})
+
+
+app.get('/api/getDeletedAggrWithoutDate', async (req, res) => {
+    let tasks = await Task.aggregate([
+        { $match: { "diffItem.type": "Delete" } },
+        {
+            $group: {
+                _id: "$diffItem.updatedTime",
+                tasks: { $push: "$$ROOT" }
+            }
+        }
+    ])
+    res.send(tasks)
 })
 
 
