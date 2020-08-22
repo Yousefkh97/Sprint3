@@ -31,7 +31,7 @@ function TasksGraph(props) {
                                     {column.tasks.length > 0 ? column.tasks.length : null}
                                 </div>
                                 <div className='chart__label'>
-                                    {(column._id)}
+                                    {column._id.toString()}
                                 </div>
                             </div>
                         )
