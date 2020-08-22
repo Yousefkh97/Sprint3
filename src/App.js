@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import Task from './view/components/Task/Task'
+import TasksGraph from './view/components/TasksGraph/TasksGraph'
 
 
 function App() {
@@ -17,12 +17,7 @@ function App() {
         <input type='submit' value='Get Data' />
       </form>
       <div className='tasks-wrapper'>
-        {
-          content.map((newItem, index) => {
-            return <Task key={index} newItem={newItem} startDate={startDate} endDate={endDate} />
-
-          })
-        }
+        <TasksGraph content={content} startDate={startDate} endDate={endDate} />
       </div>
     </div>
   );
@@ -41,16 +36,14 @@ function App() {
 
     //Get deleted Items fetch using Aggregate
 
-      e.preventDefault()
-      let { startDate, endDate } = e.target.elements;
-      fetch('/api/getDeletedAggr').then(res => res.json()).then(data => {
+    e.preventDefault();
+    let { startDate, endDate } = e.target.elements;
+    fetch('/api/getDeletedAggr').then(res => res.json()).then(data => {
+      setConent(data);
+      setStartDate(startDate.value)
+      setEndDate(endDate.value)
 
-        console.log(data);
-        setConent(data);
-        setStartDate(startDate.value)
-        setEndDate(endDate.value)
-
-        } );
+    });
   }
 }
 
