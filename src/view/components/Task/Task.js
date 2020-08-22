@@ -22,6 +22,6 @@ function Task(props) {
     )
 */
 
-return("Task - ");
+return(<p>Data</p>);
 }
 export default Task;

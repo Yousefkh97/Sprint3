@@ -49,6 +49,287 @@ const Task = mongoose.model('Task', {
 
 });
 
+// const date1 = new Date(2020,08,01).getTime();
+// const date2 = new Date(2020,08,03).getTime();
+// const date3 = new Date(2020,08,05).getTime();
+// const date4 = new Date(2020,08,07).getTime();
+// const date5 = new Date(2020,08,10).getTime();
+// const date6 = new Date(2020,08,16).getTime();
+// const date7 = new Date(2020,08,20).getTime();
+// const date8 = new Date(2020,08,25).getTime();
+
+// const tasksList = [
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Delete",
+//       "updatedTime": date1,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+
+
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Update",
+//       "updatedTime": date2,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+
+
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Create",
+//       "updatedTime": date3,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+
+
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Delete",
+//       "updatedTime": date4,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+
+
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Delete",
+//       "updatedTime": date5,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Update",
+//       "updatedTime": date6,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Create",
+//       "updatedTime": date7,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+//   },
+//   {
+//     "jiraItem": {
+//       "priority": "P00",
+//       "status": "Backlog",
+//       "jiraType": "Epic",
+//       "jiraName": "PSI 41: SAR Support for FSCK/Recovery",
+//       "jiraId": "TRIES-41773",
+//       "specialFields": {
+//         "jiraParentId": "TRIF-842",
+//         "functionalTest": true,
+//         "qaRepresentative": "Lior",
+//         "fixVersion": "PSI_41"
+//       }
+//     },
+//     "qcItem": {
+//       "requirementId": "2164",
+//       "requirementType": "Epic",
+//       "status": "Backlog",
+//     },
+//     "diffItem": {
+//       "type": "Delete",
+//       "updatedTime": date8,
+//       "updatedFields": [
+//         {
+//           "fieldName": "qaFeatureOwner",
+//           "oldVal": "in Progress",
+//           "newVal": "done",
+
+//         }
+//       ]
+//     }
+//   }
+// ];
+
+
+// Task.insertMany(tasksList,()=>{
+//   console.log("Done!")
+// })
+
 
 // API Definitions:
 
