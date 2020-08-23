@@ -20,7 +20,6 @@ function TasksGraph(props) {
     content.map((item, index) => {
         item._id = (new Date(item._id)).toLocaleDateString();
     })
-<<<<<<< HEAD
 
 
 
@@ -38,26 +37,6 @@ return (
                         }}>
                             <div key={index + 'col'} className='chart__innerColumn' >
                                 {column.tasks.length > 0 ? column.tasks.length : null}
-=======
-    console.dir(content)
-    return (
-        <div className='page'>
-            <div className='chart'>
-                {
-                    content.map((column, index) => {
-
-                        return (
-                            <div className='chart__column' style={{
-                                height: `${(column.tasks.length / 10) * 100}%`,
-                                width: `${(1 / content.length) * 90}%`
-                            }}>
-                                <div key={index + 'col'} className='chart__innerColumn' >
-                                    {column.tasks.length > 0 ? column.tasks.length : null}
-                                </div>
-                                <div className='chart__label'>
-                                    {column._id.toString()}
-                                </div>
->>>>>>> master
                             </div>
                             <div className='chart__label'>
                                 {column._id}
